@@ -38,6 +38,21 @@
         $('#btnC').click(function(e) {
             btnCClick(e);
         });
+
+        $('#btnD').click(function(e) {
+            btnDClick(e);
+        });
+
+        $('#btnE').click(function(e) {
+            btnEClick(e);
+        });
+
+        $('#btnF').click(function(e) {
+            btnFClick(e);
+        });
+        $('#reset').click(function(e) {
+            btnRClick(e);
+        });
         init();
     });
     
@@ -162,6 +177,10 @@
         $('#btnA').prop('disabled', false);
         $('#btnB').prop('disabled', false);
         $('#btnC').prop('disabled', false);
+        $('#btnD').prop('disabled', false);
+        $('#btnE').prop('disabled', false);
+        $('#btnF').prop('disabled', false);
+        $('#btnR').prop('disabled', false);
         
     }
 
@@ -199,8 +218,46 @@
         $("#time").html("経過時間： 0");
         $("#remain").html("残り時間： " + period);
     }
-    
- 
+
+    // ButtonDがクリックされた時の処理
+    function btnDClick(e){
+        active = false;
+        $("#minute").val(3);
+        $("#second").val(0);
+        period = 60* parseInt( $("#minute").val() ) + parseInt( $("#second").val() );
+        $("#time").html("経過時間： 0");
+        $("#remain").html("残り時間： " + period);
+    }
+
+    // ButtonEがクリックされた時の処理
+    function btnEClick(e){
+        active = false;
+        $("#minute").val(5);
+        $("#second").val(0);
+        period = 60* parseInt( $("#minute").val() ) + parseInt( $("#second").val() );
+        $("#time").html("経過時間： 0");
+        $("#remain").html("残り時間： " + period);
+    }
+    // ButtonFがクリックされた時の処理
+    function btnFClick(e){
+        active = false;
+        $("#minute").val(10);
+        $("#second").val(0);
+        period = 60* parseInt( $("#minute").val() ) + parseInt( $("#second").val() );
+        $("#time").html("経過時間： 0");
+        $("#remain").html("残り時間： " + period);
+    }
+
+    // ButtonRがクリックされた時の処理
+    function btnRClick(e){
+        active = false;
+        $("#minute").val(0);
+        $("#second").val(0);
+        period = 60* parseInt( $("#minute").val() ) + parseInt( $("#second").val() );
+        $("#time").html("経過時間： 0");
+        $("#remain").html("残り時間： " + period);
+    }
+
     // 繰り返し実行する処理
     function timer(){  
         if (active) {
@@ -228,7 +285,11 @@
     <div id="time">Time</div>
     <button id="btnA">Start</button>  
     <button id="btnB">Stop</button>  
-    <button id="btnC">Set</button>  
+    <button id="btnC">Set</button> 
+    <button id="btnD">3min</button>
+    <button id="btnE">5min</button> 
+    <button id="btnF">10min</button>
+    <button id="reset">Reset</button>   
     <input type="number" id="minute" value=0 >
     <input type="number" id="second" value=15 >
 </body>
